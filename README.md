@@ -200,4 +200,266 @@ Sichqoncha ustiga olib kelsangiz, matn to‘xtaydi!
 ❌ Lekin HTML5 da u **eskirgan**, shuning uchun **CSS yoki JavaScript** ishlatish yaxshiroq.  
 
 Agar qo‘shimcha savollaringiz bo‘lsa, bemalol so‘rashingiz mumkin! 😊
+### **HTMLda matn bo‘limlarini qanday ajratish mumkin?**  
 
+HTMLda matnni bo‘limlarga ajratish va tartibga solish uchun turli xil teglar ishlatiladi. Quyida eng ko‘p ishlatiladigan usullar bilan tanishamiz:  
+
+---
+
+### **1. `<br>` – Yangi qatordan boshlash (Break Line)**  
+Agar matnni yangi qatordan boshlash kerak bo‘lsa, `<br>` tegi ishlatiladi.  
+```html
+<p>Bu birinchi qator.<br>Bu esa yangi qator.</p>
+```
+🔹 **Natija:**  
+Bu birinchi qator.  
+Bu esa yangi qator.  
+
+📌 **Eslatma:** `<br>` tegi o‘z-o‘zidan yopiladi va faqat bitta qator tashlash uchun ishlatiladi.  
+
+---
+
+### **2. `<p>` – Paragraf (Bo‘lim yaratish)**  
+Agar matnni alohida bo‘limlarga ajratmoqchi bo‘lsangiz, har bir qismni `<p>` tegi ichiga yozing.  
+```html
+<p>Bu birinchi paragraf.</p>
+<p>Bu esa ikkinchi paragraf.</p>
+```
+🔹 **Natija:**  
+Bu birinchi paragraf.  
+
+Bu esa ikkinchi paragraf.  
+
+📌 **Eslatma:** Brauzer har bir `<p>` tegidan keyin avtomatik ravishda yangi qatordan boshlaydi.  
+
+---
+
+### **3. `<hr>` – Gorizontal chiziq bilan ajratish**  
+Matn bo‘limlarini vizual ajratish uchun `<hr>` (Horizontal Rule) tegi ishlatiladi.  
+```html
+<p>Bu birinchi qism.</p>
+<hr>
+<p>Bu esa ikkinchi qism.</p>
+```
+🔹 **Natija:**  
+Bu birinchi qism.  
+––––––––––––––––––  
+Bu esa ikkinchi qism.  
+
+📌 **Eslatma:** `<hr>` tegi o‘z-o‘zidan yopiladi va sahifada gorizontal chiziq hosil qiladi.  
+
+---
+
+### **4. `<div>` – Katta bo‘lim yaratish**  
+Agar matnning bir qismini alohida bo‘limga ajratmoqchi bo‘lsangiz, `<div>` tegi ishlatiladi.  
+```html
+<div style="background-color: #f0f0f0; padding: 10px;">
+    <h2>Bo‘lim sarlavhasi</h2>
+    <p>Bu bo‘lim ichidagi matn.</p>
+</div>
+```
+🔹 **Natija:**  
+Bo‘lim sarlavhasi  
+Bu bo‘lim ichidagi matn.  
+
+📌 **Eslatma:** `<div>` ko‘rinmaydi, lekin CSS orqali unga fon, chegaralar va boshqa dizayn elementlari qo‘shish mumkin.  
+
+---
+
+### **5. `<span>` – Matn ichida kichik bo‘lak ajratish**  
+Agar faqat bitta so‘z yoki jumlani ajratib ko‘rsatmoqchi bo‘lsangiz, `<span>` tegi ishlatiladi.  
+```html
+<p>Bu <span style="color: red;">qizil</span> so‘z.</p>
+```
+🔹 **Natija:**  
+Bu **qizil** so‘z.  
+
+📌 **Eslatma:** `<span>` blok yaratmaydi, faqat matn ichidagi alohida qismlarni stil bilan ajratish uchun ishlatiladi.  
+
+---
+
+### **6. `<section>` – Tarkibiy bo‘limlar yaratish**  
+Veb-sahifani mantiqiy bo‘limlarga ajratish uchun `<section>` ishlatiladi.  
+```html
+<section>
+    <h2>Bo‘lim sarlavhasi</h2>
+    <p>Bu bo‘lim matni.</p>
+</section>
+```
+📌 **Eslatma:** `<section>` tarkibni ma'nosi bo‘yicha ajratish uchun ishlatiladi va SEO uchun foydalidir.  
+
+---
+
+### **7. `<article>` – Mustaqil maqola yoki post yaratish**  
+Agar matn mustaqil maqola yoki blog posti bo‘lsa, `<article>` tegi ishlatiladi.  
+```html
+<article>
+    <h2>Maqola sarlavhasi</h2>
+    <p>Bu maqolaning matni.</p>
+</article>
+```
+📌 **Eslatma:** `<article>` odatda yangiliklar, blog postlari yoki sharhlar uchun ishlatiladi.  
+
+---
+
+### **Xulosa**  
+✅ **Yangi qatordan boshlash:** `<br>`  
+✅ **Paragraf yaratish:** `<p>`  
+✅ **Chiziq bilan ajratish:** `<hr>`  
+✅ **Blok yaratish:** `<div>`  
+✅ **Matn ichida ajratish:** `<span>`  
+✅ **Bo‘lim yaratish:** `<section>`  
+✅ **Maqola yoki post yaratish:** `<article>`  
+
+💡 Qaysi usulni ishlatish kerakligi **matnning qanday maqsadda ajratilishiga bog‘liq**. Agar qo‘shimcha savollaringiz bo‘lsa, bemalol so‘rashingiz mumkin! 😊
+
+### **HTMLda ro‘yxatlar (List types) turlari**  
+
+HTMLda ro‘yxatlar **uch turga** bo‘linadi:  
+1. **Tartibsiz ro‘yxat (Unordered List - `<ul>`)**  
+2. **Tartibli ro‘yxat (Ordered List - `<ol>`)**  
+3. **Tavsifli ro‘yxat (Description List - `<dl>`)**  
+
+---
+
+## **1. Tartibsiz ro‘yxat (`<ul>`)**  
+Tartibsiz ro‘yxat (`<ul>`) – bu elementlari oldida belgilar (nuqta, doira, kvadrat) bo‘lgan ro‘yxat.  
+
+### **Misol:**  
+```html
+<ul>
+    <li>Olma</li>
+    <li>Banan</li>
+    <li>Uzum</li>
+</ul>
+```
+🔹 **Natija:**  
+- Olma  
+- Banan  
+- Uzum  
+
+📌 **`<li>` (List Item)** – har bir ro‘yxat elementini bildiradi.  
+
+### **Belgi turini o‘zgartirish (`type`)**  
+```html
+<ul type="square">
+    <li>Olma</li>
+    <li>Banan</li>
+    <li>Uzum</li>
+</ul>
+```
+🔹 **Mumkin bo‘lgan qiymatlar:**  
+- `disc` (standart nuqta)  
+- `circle` (bo‘sh doira)  
+- `square` (kvadrat)  
+
+---
+
+## **2. Tartibli ro‘yxat (`<ol>`)**  
+Tartibli ro‘yxat (`<ol>`) – bu elementlari **raqamlar yoki harflar bilan** tartiblangan ro‘yxat.  
+
+### **Misol:**  
+```html
+<ol>
+    <li>Birinchi</li>
+    <li>Ikkinchi</li>
+    <li>Uchinchi</li>
+</ol>
+```
+🔹 **Natija:**  
+1. Birinchi  
+2. Ikkinchi  
+3. Uchinchi  
+
+### **Tartib belgilarini o‘zgartirish (`type`)**  
+```html
+<ol type="A">
+    <li>Birinchi</li>
+    <li>Ikkinchi</li>
+    <li>Uchinchi</li>
+</ol>
+```
+🔹 **Mumkin bo‘lgan qiymatlar:**  
+- `1` → 1, 2, 3, ... (standart)  
+- `A` → A, B, C, ...  
+- `a` → a, b, c, ...  
+- `I` → I, II, III, ...  
+- `i` → i, ii, iii, ...  
+
+### **Raqamni belgilangan joydan boshlash (`start`)**  
+```html
+<ol start="5">
+    <li>Beshinchi</li>
+    <li>Oltinchi</li>
+</ol>
+```
+🔹 **Natija:**  
+5. Beshinchi  
+6. Oltinchi  
+
+---
+
+## **3. Tavsifli ro‘yxat (`<dl>`)**  
+Tavsifli ro‘yxat (`<dl>`) – bu har bir elementga tavsif qo‘shilgan ro‘yxat.  
+
+### **Misol:**  
+```html
+<dl>
+    <dt>HTML</dt>
+    <dd>Veb-sahifalarni yaratish uchun belgilash tili.</dd>
+
+    <dt>CSS</dt>
+    <dd>Veb-sahifalarga dizayn berish tili.</dd>
+</dl>
+```
+🔹 **Teglar ma’nosi:**  
+- `<dl>` → Description List (Tavsifli ro‘yxat)  
+- `<dt>` → Definition Term (Atama yoki sarlavha)  
+- `<dd>` → Definition Description (Atamaning tavsifi)  
+
+🔹 **Natija:**  
+**HTML**  
+Veb-sahifalarni yaratish uchun belgilash tili.  
+
+**CSS**  
+Veb-sahifalarga dizayn berish tili.  
+
+---
+
+## **Ichma-ich ro‘yxatlar (Nested Lists)**  
+Har qanday ro‘yxatni boshqa ro‘yxat ichiga joylashtirish mumkin.  
+
+### **Misol:**  
+```html
+<ul>
+    <li>Mevalar
+        <ul>
+            <li>Olma</li>
+            <li>Banan</li>
+        </ul>
+    </li>
+    <li>Sabzavotlar
+        <ul>
+            <li>Sabzi</li>
+            <li>Pomidor</li>
+        </ul>
+    </li>
+</ul>
+```
+🔹 **Natija:**  
+- Mevalar  
+  - Olma  
+  - Banan  
+- Sabzavotlar  
+  - Sabzi  
+  - Pomidor  
+
+---
+
+## **Xulosa**  
+✅ **Tartibsiz ro‘yxat (`<ul>`)** → Nuqtalar bilan belgilanadi.  
+✅ **Tartibli ro‘yxat (`<ol>`)** → Raqam yoki harflar bilan tartiblanadi.  
+✅ **Tavsifli ro‘yxat (`<dl>`)** → Atamalar va ularning tavsiflari ko‘rsatiladi.  
+✅ **Ichma-ich ro‘yxatlar** → Ro‘yxat ichida boshqa ro‘yxat bo‘lishi mumkin.  
+
+Agar qo‘shimcha savollaringiz bo‘lsa, bemalol so‘rashingiz mumkin! 😊
